@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="paperjs\dist\paper-full.js"></script>
 	<!-- paper js canvas code -->
 	<script type="text/paperscript" canvas="myCanvas">
-		var rad = 5;
+		var rad = 10;
 		var d = 100;
 		for(var x=100; x<=1100; x+=d)
 		{
@@ -19,34 +19,35 @@
 				myCircle.fillColor = 'purple';
 			}
 		}
-		var x;
-		var y=1200;
-		var cntY;
-		var cntX;
-		var maxCntX=11;
-		for(cntY=1; cntY<=6; cntY++)
+
+		function triangle()
 		{
-			y-=d;
-			x=d*cntY;
-			for(cntX=1; cntX<=maxCntX; cntX++)
+			var x;
+			var y=1200;
+			var cntY;
+			var cntX;
+			var maxCntX=11;
+			for(cntY=1; cntY<=6; cntY++)
 			{
-				var myCircle = new Path.Circle(new Point(x, y), rad);
-				var r = Math.floor(Math.random() * 256);
-				var g = Math.floor(Math.random() * 256);
-				var b = Math.floor(Math.random() * 256);
-				myCircle.fillColor = 'rgb('+r+', '+g+', '+b+')';
-				x+=d;
+				y-=d;
+				x=d*cntY;
+				for(cntX=1; cntX<=maxCntX; cntX++)
+				{
+					var myCircle = new Path.Circle(new Point(x, y), rad);
+					var r = Math.floor(Math.random() * 256);
+					var g = Math.floor(Math.random() * 256);
+					var b = Math.floor(Math.random() * 256);
+					myCircle.fillColor = 'rgb('+r+', '+g+', '+b+')';
+					x+=d;
+				}
+				maxCntX-=2;
 			}
-			maxCntX-=2;
 		}
+		triangle();
+		setInterval(triangle, 100);
 	</script>
 </head>
 <body>
 	<canvas id="myCanvas"></canvas>
-	
-	
-	
-	<!-- custom js -->
-	<script type="text/javascript" src="paperjs_circles.js"></script>
 </body>
 </html>
