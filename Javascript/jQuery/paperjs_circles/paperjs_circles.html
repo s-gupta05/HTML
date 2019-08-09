@@ -10,10 +10,10 @@
 	<!-- paper js canvas code -->
 	<script type="text/paperscript" canvas="myCanvas">
 		var rad = 10;
-		var d = 100;
-		for(var x=100; x<=1100; x+=d)
+		var d = 80;
+		for(var x=d; x<=880; x+=d)
 		{
-			for(var y=100; y<=1100; y+=d)
+			for(var y=d; y<=880; y+=d)
 			{
 				var myCircle = new Path.Circle(new Point(x, y), rad);
 				myCircle.fillColor = 'purple';
@@ -23,7 +23,7 @@
 		function triangle()
 		{
 			var x;
-			var y=1200;
+			var y=960;
 			var cntY;
 			var cntX;
 			var maxCntX=11;
